@@ -4,7 +4,7 @@ const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const fileRoutes = require("./routes/file-upload-routes");
-const 
+
 const port = process.env.PORT || 5000;
 const app = express();
 app.use(cors());
@@ -21,6 +21,4 @@ app.get("*", (req, res) => {
 
 app.use("/api", fileRoutes.routes);
 
-app.listen(port, () =>
-  console.log(`server is listening on port: ${port}`)
-);
+app.listen(port, () => console.log(`server is listening on port: ${port}`));
