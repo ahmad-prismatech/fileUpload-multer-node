@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const fileRoutes = require("./routes/file-upload-routes");
 const app = express();
 
+require("dotenv").config();
 app.use(morgan("dev", "immediate"));
 app.use(cors());
 require("./database")();
@@ -20,7 +21,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 const server = app.listen(port, () =>
   console.log(`Listening on port: ${port}...`)
 );
