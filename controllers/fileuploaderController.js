@@ -2,7 +2,6 @@
 const SingleFile = require("../models/singlefile");
 const MultipleFile = require("../models/multiplefile");
 const fs = require("fs");
-const formidable = require("formidable");
 
 const singleFileUpload = async (req, res, next) => {
   try {

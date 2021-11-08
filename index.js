@@ -3,7 +3,6 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const morgan = require("morgan");
-const bodyParser = require("body-parser");
 const fileRoutes = require("./routes/file-upload-routes");
 const app = express();
 
@@ -13,7 +12,6 @@ app.use(cors());
 require("./database")();
 app.use("/api", fileRoutes.routes);
 
-app.use(bodyParser.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use(express.static(path.join(__dirname, "/client/build")));
