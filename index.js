@@ -18,6 +18,9 @@ app.use(express.static(path.join(__dirname, "/client/build")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
+process.on("uncaughtException", function (err, req, res, next) {
+  console.log("Node Server startup Error " + err);
+});
 
 app.use("/api", fileRoutes.routes);
 
