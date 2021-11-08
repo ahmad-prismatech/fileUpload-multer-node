@@ -11,5 +11,5 @@ module.exports = () => {
       useCreateIndex: true,
       useFindAndModify: true,
     })
-    .then(() => console.log(`Connected to ${db} ......`));
+    .then(() => console.log(`Connected to ${db} ..`));
 };
